@@ -32,7 +32,7 @@ namespace Tuan4_PhamNguyenTrungTruc.Controllers
             }
             else
             {
-                sanpham.iSoLuong++;
+                sanpham.iSoluong++;
                 return Redirect(strURL);
             }
         }
@@ -42,7 +42,7 @@ namespace Tuan4_PhamNguyenTrungTruc.Controllers
             List<Giohang> lstGiohang = Session["GioHang"] as List<Giohang>;
             if (lstGiohang != null)
             {
-                tsl = lstGiohang.Sum(n => n.iSoLuong);
+                tsl = lstGiohang.Sum(n => n.iSoluong);
             }
             return tsl;
         }
@@ -99,7 +99,7 @@ namespace Tuan4_PhamNguyenTrungTruc.Controllers
             Giohang sanpham = lstGiohang.SingleOrDefault(n => n.masach == id);
             if (sanpham != null)
             {
-                sanpham.iSoLuong = int.Parse(collection["txtSoLg"].ToString());
+                sanpham.iSoluong = int.Parse(collection["txtSoLg"].ToString());
             }
             return RedirectToAction("GioHang");
         }

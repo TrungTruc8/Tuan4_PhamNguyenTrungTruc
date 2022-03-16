@@ -19,11 +19,12 @@ namespace Tuan4_PhamNguyenTrungTruc.Models
         public Double giaban { get; set; }
 
         [Display(Name = "Số lượng")]
-        public int iSoLuong { get; set; }
+        public int iSoluong { get; set; }
+
         [Display(Name = "Thành tiền")]
         public Double dThanhtien
         {
-            get { return iSoLuong * giaban; }
+            get { return iSoluong * giaban; }
         }
         public Giohang(int id)
         {
@@ -32,7 +33,7 @@ namespace Tuan4_PhamNguyenTrungTruc.Models
             tensach = sach.tensach;
             hinh = sach.hinh;
             giaban = double.Parse(sach.giaban.ToString());
-            iSoLuong = 1;
+            iSoluong = 1;
         }
     }
 }
